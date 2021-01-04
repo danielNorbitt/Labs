@@ -15,22 +15,17 @@ def inputs():
     return csv,prioridades
 
 # Ordenação dos dados
-def bubbleSort(matriz,prioridades):
-    a = [matriz[0].index(i) for i in prioridades]
-    litsT = [tuple(i) for i in matriz[1:]]
-    data = sorted(litsT,key=lambda tup: [tup[x] for x in a])
-    
-    for linha in data:
-        print('{:15s}'.format(linha[0]), ''.join('{:>10}'.format(item) for item in list(linha)[1:]))
-
-
-
+def ordemComPrioridade(matriz,prioridades):
+    listT = [tuple(i) for i in matriz[1:]]
+    indexPrioridade = [matriz[0].index(i) for i in prioridades]
+    data = sorted(listT,key=lambda tup: [tup[x] for x in indexPrioridade])
+    data.insert(0,matriz[0])
+    return data
 
 csv,prioridades = inputs()
 
-bubbleSort(csv,prioridades)
+csv = ordemComPrioridade(csv,prioridades)
 # Saída dos dados
 for linha in csv:
-    print('{:15s}'.format(linha[0]), ''.join('{:>10}'.format(item) for item in linha[1:]))
-
+    print('{:15s}'.format(linha[0]), ''.join('{:>10}'.format(item) for item in list(linha)[1:]))
 
