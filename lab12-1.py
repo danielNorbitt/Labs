@@ -29,9 +29,9 @@ def retiraBorda(imagem):
     novaImg = copy.deepcopy(imagem)
     for i in range(len(imagem)):
         del(novaImg[i][0])
-        _ = novaImg[i].pop()
-    novaImg.pop()
+        del(novaImg[i][-1])
     del(novaImg[0])
+    del(novaImg[-1])
     return novaImg
 
 def convolucao(imagem,filtro,D):
