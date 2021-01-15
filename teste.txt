@@ -1,6 +1,6 @@
-Produto           Setembro   Outubro  Novembro
-Farinha                 20        22        25
-Fermento                15        17        13
-Manteiga                50        45        55
-Margarina               20         9        87
-Pao                     40        50        48
+1 - lala
+False False True False
+1 - lala
+False False False True
+(0,0) -> (0,9): nao existe caminho
+(0,9) -> (0,0): nao existe caminho

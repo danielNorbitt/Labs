@@ -8,7 +8,7 @@
 # Leitura de dados
 def inputs():
     n = int(input())
-    csv = []
+    csv = [] 
     for _ in range(n+1):
         csv.append([int(i) if i.isdigit() else i for i in input().split(",")])
     prioridades = input().split()
@@ -21,6 +21,10 @@ def ordemComPrioridade(matriz,prioridades):
     data = sorted(listT,key=lambda tup: [tup[x] for x in indexPrioridade])
     data.insert(0,matriz[0])
     return data
+
+for x in indexPr:
+    append(a)
+
 
 csv,prioridades = inputs()
 
