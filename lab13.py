@@ -22,8 +22,8 @@ def ordemComPrioridade(matriz,prioridades):
     data.insert(0,matriz[0])
     return data
 
-for x in indexPr:
-    append(a)
+
+
 
 
 csv,prioridades = inputs()

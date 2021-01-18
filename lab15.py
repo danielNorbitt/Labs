@@ -3,7 +3,9 @@ def inputs():
     tabuleiro = [[int(j) for j in input().split()] for _ in range(n)]
     a, b = [int(i) for i in input().split()]
     c, d = [int(i) for i in input().split()]
-    return n, m, tabuleiro, a, b, c, d, ref = [[0] * m for _ in range(n)]
+    ref1 = [[0] * m for _ in range(n)]
+    ref2 = [[0] * m for _ in range(n)]
+    return n, m, tabuleiro, a, b, c, d, ref1,ref2
 
 def existeCaminho(tabuleiro, a, b, c, d , n, m ,ref):
     if a == c and b == d:
@@ -20,6 +22,10 @@ def printFinal(a,b,c,d,caminho1,caminho2):
     print("({},{}) -> ({},{}):".format(a, b, c, d), sim if caminho1 else nao)
     print("({},{}) -> ({},{}):".format(c, d, a, b), sim if caminho2 else nao)
 
-n,m,tabuleiro,a,b,c,d,ref = inputs()
+def main():
+    n, m, tabuleiro, a, b, c, d, ref1, ref2 = inputs()
 
-printFinal(a,b,c,d,existeCaminho(tabuleiro,a,b,c,d,n,m,ref),existeCaminho(tabuleiro,c,d,a,b,n,m,ref))
+    printFinal(a, b, c, d, existeCaminho(tabuleiro, a, b, c, d, n, m,
+                                        ref1), existeCaminho(tabuleiro, c, d, a, b, n, m, ref2))
+
+main()

@@ -6,7 +6,6 @@ def inputs():
     prioridades = input().split()
     return csv, prioridades
 
-# Ordenação dos dados
 
 
 def ordemComPrioridade(matriz, prioridades):
@@ -16,7 +15,6 @@ def ordemComPrioridade(matriz, prioridades):
         for j in range(len(matriz[0])):
             dic[matriz[0][j]] =  matriz[i][j]
         litDic.append(dic)
-    print(l)
     data = sorted(litDic, key=lambda tup: [tup[x] for x in prioridades])
     m = []
     for dic in data:
@@ -31,7 +29,7 @@ def ordemComPrioridade(matriz, prioridades):
 csv, prioridades = inputs()
 
 csv = ordemComPrioridade(csv, prioridades)
-# Saída dos dados
+
 for linha in csv:
     print('{:15s}'.format(linha[0]), ''.join(
         '{:>10}'.format(item) for item in list(linha)[1:]))
